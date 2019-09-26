@@ -2,10 +2,18 @@ function generateRandom() {
 
     var num1 = document.querySelector("#num1");
     var num2 = document.querySelector("#num2");
-    setRightOrder(num1,num2);
-}
-function randomNumber(num1, num2) {
+    var random = document.querySelector("#randomNumber");
+    setRightOrder(num1, num2);
+    random.textContent = randomNumber(num1, num2);
 
+}
+function randomNumber(min, max) {
+    var min = parseInt(min.value);
+    var max = parseInt(max.value);
+    var random = (Math.floor(Math.random() * (max - min)) + min);
+    console.log(random);
+
+    return random;
 }
 
 function setRightOrder(num1, num2) {
