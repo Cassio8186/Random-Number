@@ -8,9 +8,9 @@ function generateRandom() {
 
 }
 function randomNumber(min, max) {
-    var min = parseInt(min.value);
-    var max = parseInt(max.value);
-    var random = (Math.floor(Math.random() * (max - min)) + min);
+    var min = (parseInt(min.value) - 1);
+    var max = (parseInt(max.value) + 1);
+    var random = ((Math.floor(Math.random() * (max - min)) + min));
     console.log(random);
 
     return random;
@@ -24,4 +24,3 @@ function setRightOrder(num1, num2) {
         num2.value = value1;
     }
 }
-generateRandom();

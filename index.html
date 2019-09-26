@@ -18,15 +18,15 @@
       <h1 class="display-3">Random Numbers</h1>
       <p class="lead">Choose numbers and press the button</p>
       <hr class="my-2">
-      <form action="" method="post" class="my-3">
+      <section class="my-3">
         <div class="row align-items-center justify-content-around">
           <div class="col-7">
-            <h1 class="display-2 pb-5" id="randomNumber">123456</h1>
+            <h1 class="display-2 pb-5" id="randomNumber">0</h1>
           </div>
           <div class="col-3 mr-5">
             <div class="row">
               <div class="col-12 mb-1 mr-5">
-                <input type="number" name="num1" id="num1" value=15>
+                <input type="number" name="num1" id="num1" value=1>
               </div>
               <div class="col-12 mb-5">
                 <input type="number" name="num2" id="num2" value=10>
@@ -36,10 +36,10 @@
         </div>
         <div class="row align-items-center justify-content-center">
           <div class="col-10">
-            <button type="submit" class="btn btn-primary btn-block">Generate</button>
+            <button class="btn btn-primary btn-block" onclick="generateRandom()">Generate</button>
           </div>
         </div>
-      </form>
+      </section>
     </div>
   </div>
   </div>
