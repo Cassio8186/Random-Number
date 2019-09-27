@@ -31,14 +31,19 @@ function rollNumber(number1, number2) {
     start = parseInt(number1)
     end = parseInt(number2);
     if (start < end) {
-        while (start != (end + 1)) {
+        var timer = setInterval(function () {
+            if (start == end) {
+                clearInterval(timer);
+            }
             number.textContent = start++
-        }
+        }, 100);
     }
     else if (start > end) {
-        while (start != (end - 1)) {
+        var timer = setInterval(function () {
+            if (start == end) {
+                clearInterval(timer);
+            }
             number.textContent = start--
-        }
+        }, 100);
     } else { number.textContent = start }
-
 }
