@@ -38,13 +38,15 @@
                   <div class="col-lg-12">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="min">Min</span>
-                      <input type="number" name="num1" id="num1" value=1 class="form-control" placeholder="min">
+                      <input type="number" name="num1" id="num1" value=1 class="form-control" placeholder="min"
+                        max=999999 onfocusout="setMax()">
                     </div>
                   </div>
                   <div class="col-lg-12 mb-md-5 mb-1">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="max">Max</span>
-                      <input type="number" name="num2" id="num2" value=10 class="form-control" placeholder="min">
+                      <input type="number" name="num2" id="num2" value=10 class="form-control" placeholder="min"
+                        max=999999 onfocusout="setMax()">
                     </div>
                   </div>
                 </div>
