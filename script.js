@@ -1,12 +1,16 @@
 var num1 = document.querySelector("#num1");
 var num2 = document.querySelector("#num2");
 var number = document.querySelector("#randomNumber");
+let activeRolling = false;
+
 function generateRandom() {
 
-
+    console.log(activeRolling)
     setRightOrder(num1, num2);
-    var randomNumber = randomNum(num1, num2);
-    rollNumber(number.textContent, randomNumber);
+    if (activeRolling === false) {
+        var randomNumber = randomNum(num1, num2);
+        rollNumber(number.textContent, randomNumber);
+    }
 
 
 }
@@ -14,7 +18,6 @@ function randomNum(min, max) {
     var min = (parseInt(min.value) - 1);
     var max = (parseInt(max.value) + 1);
     var random = ((Math.floor(Math.random() * (max - min)) + min));
-    console.log("random: " + random);
     return random;
 }
 
@@ -30,20 +33,29 @@ function setRightOrder(num1, num2) {
 function rollNumber(number1, number2) {
     start = parseInt(number1)
     end = parseInt(number2);
-    if (start < end) {
-        var timer = setInterval(function () {
-            if (start == end) {
-                clearInterval(timer);
-            }
-            number.textContent = start++
-        }, 100);
+    if (activeRolling === false) {
+        activeRolling = true;
+        if (start < end) {
+            var timer = setInterval(function () {
+                if (start == end) {
+                    clearInterval(timer);
+                    activeRolling = false;
+                }
+                number.textContent = start++;
+            }, 100);
+        }
+        else if (start > end) {
+            var timer = setInterval(function () {
+                if (start == end) {
+                    clearInterval(timer);
+                    activeRolling = false;
+                }
+                number.textContent = start--;
+            }, 100);
+        } else {
+            number.textContent = start;
+            activeRolling = false;
+        }
+
     }
-    else if (start > end) {
-        var timer = setInterval(function () {
-            if (start == end) {
-                clearInterval(timer);
-            }
-            number.textContent = start--
-        }, 100);
-    } else { number.textContent = start }
 }
