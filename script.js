@@ -60,7 +60,29 @@ function rollNumber(number1, number2) {
                     clearInterval(timer);
                     activeRolling = false;
                 }
-                number.textContent = start++;
+                var dif = (Math.abs(start - end))
+                if (dif > 100000) {
+                    start += (10000);
+                    number.textContent = start;
+                }
+                else if (dif > 100000) {
+                    start += (10000);
+                    number.textContent = start;
+                }
+                else if (dif > 10000) {
+                    start += (1000);
+                    number.textContent = start;
+                }
+                else if (dif > 1000) {
+                    start += (100);
+                    number.textContent = start;
+                }
+                else if (dif > 100) {
+                    start += (10);
+                    number.textContent = start;
+                } else {
+                    number.textContent = start++;
+                }
             }, time(start, end));
         }
         else if (start > end) {
@@ -69,11 +91,42 @@ function rollNumber(number1, number2) {
                     clearInterval(timer);
                     activeRolling = false;
                 }
-                number.textContent = start--;
+                var dif = (Math.abs(start - end))
+                if (dif > 100000) {
+                    start -= (10000);
+                    number.textContent = start;
+                }
+                else if (dif > 100000) {
+                    start -= (10000);
+                    number.textContent = start;
+                }
+                else if (dif > 10000) {
+                    start -= (1000);
+                    number.textContent = start;
+                }
+                else if (dif > 1000) {
+                    start -= (100);
+                    number.textContent = start;
+                }
+                else if (dif > 100) {
+                    start -= (10);
+                    number.textContent = start;
+                } else {
+                    number.textContent = start--;
+                }
             }, time(start, end));
         } else {
             number.textContent = start;
             activeRolling = false;
         }
+    }
+}
+
+function setMax() {
+    if (parseInt(num1.value) > 999999) {
+        num1.value = 999999;
+    }
+    if (parseInt(num2.value) > 999999) {
+        num2.value = 999999;
     }
 }
