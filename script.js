@@ -1,18 +1,18 @@
+console.log("Thank you for visiting my first solo Web Page")
+console.log("Well, by solo I mean not watching a tutorial,");
+console.log("but I clearly tried to copy google's random number generator online");
+
 var num1 = document.querySelector("#num1");
 var num2 = document.querySelector("#num2");
 var number = document.querySelector("#randomNumber");
 let activeRolling = false;
 
 function generateRandom() {
-
-    console.log(activeRolling)
     setRightOrder(num1, num2);
     if (activeRolling === false) {
         var randomNumber = randomNum(num1, num2);
         rollNumber(number.textContent, randomNumber);
     }
-
-
 }
 function randomNum(min, max) {
     var min = (parseInt(min.value));
@@ -35,7 +35,6 @@ function rollNumber(number1, number2) {
     end = parseInt(number2);
     var time = function (start, end) {
         dif = Math.abs(start - end);
-        console.log(dif);
         if (dif < 10) {
             return 50;
         } else if (dif < 20) {
@@ -53,7 +52,6 @@ function rollNumber(number1, number2) {
             return 1;
         }
     }
-    console.log(time(start, end));
     if (activeRolling === false) {
         activeRolling = true;
         if (start < end) {
@@ -79,4 +77,3 @@ function rollNumber(number1, number2) {
         }
     }
 }
-
