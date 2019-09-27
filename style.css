@@ -1,0 +1,40 @@
+#octocat {
+    width: 60PX;
+}
+
+.bg-light {
+    background-color: #00000000!important;
+}
+
+.jumbotron {
+    background: rgba(160, 165, 170, 0.301);
+}
+
+.input-group-text {
+    color: #49505785;
+    background-color: #e9ecef00;
+    padding: .375rem .75rem;
+}
+
+.form-control {
+    color: #495057;
+    background-color: rgba(255, 255, 255, 0.432);
+}
+
+@media (max-width: 1024px) {
+    .display-3 {
+        font-size: 3.8rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-3 {
+        font-size: 3.5rem !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .display-3 {
+        font-size: 3rem !important;
+    }
+}
