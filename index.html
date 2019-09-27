@@ -14,7 +14,7 @@
 <body>
 
   <div class="container">
-    <div class="jumbotron jumbotron-fluid text-center mt-5">
+    <div class="jumbotron jumbotron-fluid text-center mt-1 mt-md-2 mt-lg-5">
       <h1 class="display-3">Random Numbers</h1>
       <p class="lead">Choose numbers and press the button</p>
       <hr class="my-2">
@@ -23,13 +23,19 @@
           <div class="col-7">
             <h1 class="display-2 pb-5" id="randomNumber">0</h1>
           </div>
-          <div class="col-3 mr-5">
-            <div class="row">
-              <div class="col-12 mb-1 mr-5">
-                <input type="number" name="num1" id="num1" value=1>
+          <div class="col-35">
+            <div class="row input-group">
+              <div class="col-12 mb-15">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Min</span>
+                  <input type="number" name="num1" id="num1" value=1 class="form-control p-sm-4" placeholder="min">
+                </div>
               </div>
               <div class="col-12 mb-5">
-                <input type="number" name="num2" id="num2" value=10>
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Max</span>
+                  <input type="number" name="num2" id="num2" value=10 class="form-control" placeholder="min">
+                </div>
               </div>
             </div>
           </div>
