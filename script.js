@@ -6,10 +6,16 @@ var num1 = document.querySelector("#num1");
 var num2 = document.querySelector("#num2");
 var number = document.querySelector("#randomNumber");
 let activeRolling = false;
+let timer;
 
 function generateRandom() {
     setRightOrder(num1, num2);
     if (activeRolling === false) {
+        var randomNumber = randomNum(num1, num2);
+        rollNumber(number.textContent, randomNumber);
+    } else {
+        activeRolling = false;
+        clearInterval(timer);
         var randomNumber = randomNum(num1, num2);
         rollNumber(number.textContent, randomNumber);
     }
@@ -55,7 +61,7 @@ function rollNumber(number1, number2) {
     if (activeRolling === false) {
         activeRolling = true;
         if (start < end) {
-            var timer = setInterval(function () {
+            timer = setInterval(function () {
                 if (start == end) {
                     clearInterval(timer);
                     activeRolling = false;
@@ -86,7 +92,7 @@ function rollNumber(number1, number2) {
             }, time(start, end));
         }
         else if (start > end) {
-            var timer = setInterval(function () {
+            timer = setInterval(function () {
                 if (start == end) {
                     clearInterval(timer);
                     activeRolling = false;
